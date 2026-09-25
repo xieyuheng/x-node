@@ -1,7 +1,7 @@
 import assert from "node:assert"
 import { test } from "node:test"
-import { format } from "./format.js"
-import { parse } from "./parse.js"
+import { format } from "./format.ts"
+import { parse } from "./parse.ts"
 
 test("format", () => {
   const text = `

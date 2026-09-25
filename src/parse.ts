@@ -1,6 +1,11 @@
-import { XmlElement, XmlNode, XmlText, parseXml } from "@rgrove/parse-xml"
-import { h } from "./h.js"
-import { type XElement, type XNode } from "./x-node.js"
+import {
+  parseXml,
+  type XmlElement,
+  type XmlNode,
+  type XmlText,
+} from "@rgrove/parse-xml"
+import { h } from "./h.ts"
+import { type XElement, type XNode } from "./x-node.ts"
 
 interface ParsingErrorOptions {
   column: number
@@ -9,15 +14,18 @@ interface ParsingErrorOptions {
   pos: number
 }
 
-export interface ParsingError extends ParsingErrorOptions {}
-
 export class ParsingError extends Error {
-  constructor(
-    public message: string,
-    options: ParsingErrorOptions,
-  ) {
-    super()
-    Object.assign(this, options)
+  column: number
+  excerpt: string
+  line: number
+  pos: number
+
+  constructor(message: string, options: ParsingErrorOptions) {
+    super(message)
+    this.column = options.column
+    this.excerpt = options.excerpt
+    this.line = options.line
+    this.pos = options.pos
   }
 }
 

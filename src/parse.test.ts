@@ -1,6 +1,6 @@
 import assert from "node:assert"
 import { test } from "node:test"
-import { parse } from "./parse.js"
+import { parse } from "./parse.ts"
 
 test("basic", () => {
   const nodes = parse(

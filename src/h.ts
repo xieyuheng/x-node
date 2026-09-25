@@ -1,4 +1,4 @@
-import { type XElement, type XNode } from "./x-node.js"
+import { type XElement, type XNode } from "./x-node.ts"
 
 type Args = NormalArgs | TagArgs | TagChildrenArgs | TagAttributesRestArgs
 

@@ -1,6 +1,6 @@
 import assert from "node:assert"
 import { test } from "node:test"
-import { h } from "./h.js"
+import { h } from "./h.ts"
 
 test("h", () => {
   assert.deepStrictEqual(h("question", { color: "red" }, ["Why?"]), {
